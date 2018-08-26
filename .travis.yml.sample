@@ -1,0 +1,11 @@
+sudo: false
+language: node_js
+node_js:
+  - "10.9.0"
+
+before_script:
+  - wget https://raw.githubusercontent.com/mike-stewart/cfn-lint-ci/master/lint.sh
+  - chmod +x ./lint.sh
+  - npm install -g cfn-lint
+
+script: "./lint.sh"
